@@ -1,207 +1,237 @@
-/* ======= ESTILO ORIGINAL (mantido como você pediu) ======= */
-
-/* --------------------- */
-/*      BASE GERAL       */
-/* --------------------- */
+/* ======================================== */
+/*   BASE GERAL E LAYOUT MAIS MODERNO       */
+/* ======================================== */
 
 body {
-  font-family: Arial, sans-serif;
-  background: #f7f7f7;
-  padding: 25px;
+  font-family: "Inter", Arial, sans-serif;
+  background: #000;              /* FUNDO PRETO */
+  color: #fff;                   /* Texto branco */
+  padding: 40px;
+  margin: 0;
 }
 
 h1 {
-  margin-top: 20px;
-  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 30px;
   text-align: center; /* NÃO pode mudar */
-  font-size: 32px;
-  font-weight: bold;
-  color: #333;
+  font-size: 34px;
+  color: #fff;         /* Ajustado para branco */
+  font-weight: 800;
 }
 
-/* Container aprimorado */
+/* Container geral */
 .container {
+  width: 95%;
   max-width: 850px;
   margin: 0 auto;
-  background: white;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 18px rgba(0,0,0,0.07);
 }
 
-/* --------------------- */
-/*      FORMULÁRIO       */
-/* --------------------- */
-
+/* Card principal */
 form {
-  margin-top: 20px;
+  background: #1a1a1a; /* card escuro */
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(255,255,255,0.05);
   text-align: center;
-  background-color: #ffffff;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
 }
+
+h2#form-title {
+  font-size: 26px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* ======================================== */
+/*   INPUTS MODERNOS                        */
+/* ======================================== */
 
 label {
-  display: inline-block;
-  margin-bottom: 5px;
+  display: block;
+  text-align: left;
+  font-size: 15px;
+  margin-bottom: 6px;
+  color: #ddd;
+  font-weight: 600;
 }
 
 input[type="text"],
 input[type="number"],
 textarea {
-  padding: 8px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
   width: 100%;
-  margin-bottom: 12px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #444;
+  font-size: 15px;
   box-sizing: border-box;
-  transition: border .2s, box-shadow .2s;
+  transition: all .25s ease;
+  background: #111;
+  color: #fff;
 }
 
 textarea {
-  height: 55px;
+  min-height: 60px;
   resize: vertical;
 }
 
 input:focus,
 textarea:focus {
-  border-color: #4CAF50;
-  box-shadow: 0 0 4px rgba(76,175,80,0.4);
+  border-color: #4CAF50 !important;
+  background: #222;
+  box-shadow: 0 0 6px rgba(76,175,80,0.35);
   outline: none;
 }
 
-/* Nome e preço com borda preta como pediu */
+/* borda preta para os campos obrigatórios */
 #name,
 #price,
 #description {
   border: 1px solid #000;
 }
 
-/* Botões */
+/* ======================================== */
+/*   BOTÕES MODERNOS                        */
+/* ======================================== */
+
 button,
 input[type="submit"] {
-  background-color: #4CAF50;
+  background: linear-gradient(145deg, #4CAF50, #43a047);
   color: white;
   border: none;
-  border-radius: 6px;
-  padding: 8px 14px;
-  font-size: 14px;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
   cursor: pointer;
-  transition: 0.2s;
-  margin-top: 8px;
+  transition: 0.25s ease-in-out;
+  margin-top: 10px;
 }
 
 button:hover,
 input[type="submit"]:hover {
-  background-color: #3e8e41;
-  transform: scale(1.03);
+  transform: scale(1.05);
+  background: linear-gradient(145deg, #43a047, #3d8b40);
 }
 
-/* Botão de cancelar */
 #cancel-edit {
-  background-color: #777;
+  background: #777;
+  margin-left: 6px;
 }
 
 #cancel-edit:hover {
-  background-color: #555;
+  background: #555;
+  transform: scale(1.05);
 }
 
-/* --------------------- */
-/*     LISTA GERAL       */
-/* --------------------- */
+/* ======================================== */
+/* LISTA DE PRODUTOS — GRID MODERNO        */
+/* ======================================== */
 
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 25px auto;
-  text-align: center;
-  max-width: 850px;
-}
-
-/* Grid moderno */
 #products {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+  margin-top: 40px;
   padding: 10px;
 }
 
-/* Card de produto */
 .product-item {
-  background: white;
-  border-radius: 10px;
-  padding: 15px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transition: transform .2s ease, box-shadow .2s ease;
+  background: #1a1a1a;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(255,255,255,0.05);
+  transition: 0.2s ease-in-out;
+  text-align: left;
 }
 
 .product-item:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-}
-
-/* Cabeçalho do produto */
-.product-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(255,255,255,0.1);
 }
 
 .product-title {
-  font-size: 16px;
-  font-weight: bold;
-  color: #333;
-}
-
-/* Botões dentro do card */
-.product-controls button {
-  padding: 5px 10px;
-  font-size: 12px;
-}
-
-/* --------------------- */
-/*   PRODUTO INDIVIDUAL  */
-/* --------------------- */
-
-.single-product {
-  background: linear-gradient(135deg, #ffffff, #f8f8f8);
-  padding: 25px;
-  margin: 20px auto !important;
-  width: 85%;
-  max-width: 450px;
-  border-radius: 14px;
-  border: 1px solid #e3e3e3;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-  text-align: left;
-  transition: .3s;
-}
-
-.single-product:hover {
-  transform: scale(1.02);
-  box-shadow: 0 9px 24px rgba(0,0,0,0.18);
-}
-
-.single-product .product-name {
-  font-size: 22px;
-  font-weight: bold;
-  margin-bottom: 6px;
-}
-
-.single-product .product-description {
-  font-size: 15px;
-  margin-bottom: 10px;
-  color: #555;
-}
-
-.single-product .product-price {
   font-size: 18px;
-  margin-bottom: 10px;
-  color: #4CAF50;
-  font-weight: bold;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #fff;
 }
 
-.single-product button {
+.product-description {
+  font-size: 14px;
+  color: #ccc;
+  margin-bottom: 8px;
+}
+
+.product-price {
+  font-size: 16px;
+  color: #4CAF50;
+  font-weight: 700;
+}
+
+.product-controls {
+  margin-top: 12px;
+  display: flex;
+  gap: 8px;
+}
+
+.product-controls button {
+  flex: 1;
+  padding: 8px;
+  font-size: 13px;
+}
+
+/* ======================================== */
+/* TELA DE PRODUTO INDIVIDUAL DO BACK-END  */
+/* ======================================== */
+
+.product-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.product-card {
+  background: #1a1a1a;
+  padding: 25px;
+  width: 90%;
+  max-width: 430px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(255,255,255,0.08);
+  text-align: center;
+}
+
+.product-card h2 {
+  font-size: 26px;
+  font-weight: 800;
+  color: #fff;
+}
+
+.product-card .product-description {
+  font-size: 15px;
+  color: #ccc;
   margin-top: 10px;
-  padding: 8px 12px;
+}
+
+.product-card .product-price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #4CAF50;
+  margin-top: 12px;
+}
+
+.back-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: #444;
+  color: #fff;
+  border-radius: 8px;
+  transition: .25s;
+  text-decoration: none;
+}
+
+.back-button:hover {
+  background: #000;
+  transform: scale(1.05);
 }
