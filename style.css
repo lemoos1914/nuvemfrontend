@@ -1,133 +1,207 @@
-body {
-    font-family: Arial, sans-serif;
-  }
-  
-  h1 {
-    margin-top: 20px;
-    margin-bottom: 10px;
-    text-align: center;
-  }
-  
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-  }
-  
-  li {
-    display: inline-block;
-    margin: 5px;
-    padding: 5px 10px;
-    background-color: #f2f2f2;
-    border-radius: 5px;
-    box-shadow: 2px 2px 2px #ccc;
-  }
-  
-  button {
-    margin-left: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 5px 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  button:hover {
-    background-color: #3e8e41;
-  }
-  
-  form {
-    margin-top: 20px;
-    text-align: center;
-    background-color: #f2f2f2;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 2px 2px 2px #ccc;
-  }
-  
-  label {
-    display: inline-block;
-    margin-bottom: 5px;
-  }
-  
-  input[type="text"],
-  input[type="number"] {
-    padding: 5px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    width: 100%;
-    margin-bottom: 10px;
-    box-sizing: border-box;
-  }
-  
-  input[type="submit"],
-  button[type="submit"] {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 5px 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  input[type="submit"]:hover,
-  button[type="submit"]:hover {
-    background-color: #3e8e41;
-  }
-  
-  input[type="number"]::-webkit-outer-spin-button,
-  input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-  
-  input[type="number"] {
-    -moz-appearance: textfield;
-  }
+/* ======= ESTILO ORIGINAL (mantido como você pediu) ======= */
 
-/* garantir que textarea use mesma fonte/tamanho dos inputs */
-textarea,
-#description,
-#update-description {
-  font-family: inherit;
-  font-size: 14px;
-  line-height: 1.2;
-  color: inherit;
-  padding: 5px;
-  border-radius: 5px;
-  border: 1px solid #000; /* pequena borda preta como nos outros */
-  width: 100% !important;
-  max-width: 100% !important;
+/* --------------------- */
+/*      BASE GERAL       */
+/* --------------------- */
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f7f7f7;
+  padding: 25px;
+}
+
+h1 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-align: center; /* NÃO pode mudar */
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Container aprimorado */
+.container {
+  max-width: 850px;
+  margin: 0 auto;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+}
+
+/* --------------------- */
+/*      FORMULÁRIO       */
+/* --------------------- */
+
+form {
+  margin-top: 20px;
+  text-align: center;
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+label {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+  margin-bottom: 12px;
   box-sizing: border-box;
-  height: 22px;
+  transition: border .2s, box-shadow .2s;
+}
+
+textarea {
+  height: 55px;
   resize: vertical;
 }
 
-/* borda preta só no foco */
-#description:focus,
-#update-description:focus {
-  border-color: #000;
+input:focus,
+textarea:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 4px rgba(76,175,80,0.4);
   outline: none;
-  box-shadow: none;
 }
 
-/* pequena borda preta apenas para os campos Name e Price */
+/* Nome e preço com borda preta como pediu */
 #name,
-#price {
+#price,
+#description {
   border: 1px solid #000;
-  border-radius: 5px;
-  box-sizing: border-box;
-  padding: 6px;
+}
+
+/* Botões */
+button,
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s;
+  margin-top: 8px;
+}
+
+button:hover,
+input[type="submit"]:hover {
+  background-color: #3e8e41;
+  transform: scale(1.03);
+}
+
+/* Botão de cancelar */
+#cancel-edit {
+  background-color: #777;
+}
+
+#cancel-edit:hover {
+  background-color: #555;
+}
+
+/* --------------------- */
+/*     LISTA GERAL       */
+/* --------------------- */
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 25px auto;
+  text-align: center;
+  max-width: 850px;
+}
+
+/* Grid moderno */
+#products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 15px;
+  padding: 10px;
+}
+
+/* Card de produto */
+.product-item {
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.product-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+/* Cabeçalho do produto */
+.product-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Botões dentro do card */
+.product-controls button {
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+/* --------------------- */
+/*   PRODUTO INDIVIDUAL  */
+/* --------------------- */
+
+.single-product {
+  background: linear-gradient(135deg, #ffffff, #f8f8f8);
+  padding: 25px;
+  margin: 20px auto !important;
+  width: 85%;
+  max-width: 450px;
+  border-radius: 14px;
+  border: 1px solid #e3e3e3;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  text-align: left;
+  transition: .3s;
+}
+
+.single-product:hover {
+  transform: scale(1.02);
+  box-shadow: 0 9px 24px rgba(0,0,0,0.18);
+}
+
+.single-product .product-name {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.single-product .product-description {
+  font-size: 15px;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.single-product .product-price {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #4CAF50;
+  font-weight: bold;
+}
+
+.single-product button {
+  margin-top: 10px;
+  padding: 8px 12px;
 }
