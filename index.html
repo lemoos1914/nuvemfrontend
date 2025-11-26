@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Product CRUD</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <h1>Product CRUD</h1>
+
+  <form id="add-product-form">
+    <h2 id="form-title">Add Product</h2>
+
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <!-- Description entre Name e Price, ocupa largura inteira -->
+    <div class="form-group" style="margin:8px 0;">
+      <label for="description" style="display:block; margin-bottom:4px;">Description:</label>
+      <textarea id="description" name="description" rows="1" style="width:100%; box-sizing:border-box; height:22px; padding:3px; resize:vertical; border:1px solid #000;"></textarea>
+    </div>
+
+    <label for="price">Price:</label>
+    <input type="number" id="price" name="price" required step="0.01">
+
+    <button type="submit" id="submit-button" style="display:block; margin:10px auto 0;">Add</button>
+    <button type="button" id="cancel-edit" style="display:none; margin:10px auto 0;">Cancel</button>
+  </form>
+
+  <ul id="products"></ul>
+
+  <script src="app.js"></script>
+  <script>
+    // Call fetchProducts() when the page loads
+    window.addEventListener('load', fetchProducts);
+  </script>
+</body>
+</html>
