@@ -9,7 +9,7 @@ let editingOriginal = null; // armazena os valores originais ao entrar em ediç�
 
 // Function to fetch all products from the server
 async function fetchProducts() {
-  const response = await fetch('http://35.173.47.141:3000/products');
+  const response = await fetch('http://98.81.26.206:3000/products');
   const products = await response.json();
 
   // Clear product list
@@ -140,7 +140,7 @@ async function addProduct(name, price, description) {
   const payload = { name, description };
   if (price !== '' && price != null) payload.price = Number(price);
 
-  const response = await fetch('http://35.173.47.141:3000/products', {
+  const response = await fetch('http://98.81.26.206:3000/products', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -165,7 +165,7 @@ async function addProduct(name, price, description) {
 // Function to delete a product
 async function deleteProduct(id) {
   try {
-    const response = await fetch('http://35.173.47.141:3000/products/' + encodeURIComponent(id), {
+    const response = await fetch('http://98.81.26.206:3000/products/' + encodeURIComponent(id), {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json'
@@ -202,7 +202,7 @@ async function updateProduct(id, name, price, description) {
 
   try {
     console.log('Request PATCH /products/' + id, payload);
-    let res = await fetch('http://35.173.47.141:3000/products/' + encodeURIComponent(id), {
+    let res = await fetch('http://98.81.26.206:3000/products/' + encodeURIComponent(id), {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
@@ -211,7 +211,7 @@ async function updateProduct(id, name, price, description) {
     // se PATCH não for permitido, tenta PUT
     if (res.status === 405) {
       console.warn('PATCH não suportado — tentando PUT');
-      res = await fetch('http://35.173.47.141:3000/products/' + encodeURIComponent(id), {
+      res = await fetch('http://98.81.26.206:3000/products/' + encodeURIComponent(id), {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
